@@ -8,6 +8,9 @@ class Producto(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     quantity = models.IntegerField()
     
+    def __str__(self):
+        return self.name
+    
 
 class Venta(models.Model):
     product = models.ForeignKey(Producto, on_delete=models.CASCADE)
